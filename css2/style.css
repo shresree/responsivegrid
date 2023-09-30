@@ -130,7 +130,7 @@ border: 2px solid;
 }
 
 /* Step 4: Write selector/rule property to style the container */
-@media (min-width:320px){
+@media screen and (min-width:320px){
 .container{
 display: grid;
 grid-template-columns: 1fr 5 fr 1fr;
@@ -141,13 +141,14 @@ gap: 15px;
 /* Step 5: Write selector/rule property to add the background image to the 
 first div in the grid  and place it in the grid. */
 .container > :first-child{
-  grid-column: 1/-1;
-  min-height: 500px;
-  background-image: url('images2/header.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
+    grid-column: 1/-1;
+    min-height: 500px;
+    background-image: url('images2/header.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
 
 
 
@@ -156,19 +157,19 @@ first div in the grid  and place it in the grid. */
 
       /*This will be a lot of rules.... but be strategic and combine seletors*/
 .about{
-  grid-column: 2/ span 1;
+  grid-column: 2/span 1;
   grid-row: 2;
 }
 .method{
-  grid-column: 2/ span 1;
+  grid-column: 2/span 1;
   grid-row: 3;
 }
 .clients{
-  grid-column: 2/ span 1;
+  grid-column: 2/span 1;
   grid-row:4;
 }
 .contact{
-  grid-column: 2/ span 1;
+  grid-column: 2/span 1;
   grid-row: 5;
 }
 .about-image{
@@ -224,17 +225,11 @@ first div in the grid  and place it in the grid. */
       gap: 15px; 
     }
   
-    .about,
-    .clients,
-    .method-image,
-    .contact-image {
+    .about, .clients, .method-image, .contact-image {
       grid-column: 3 / span 2; /* Begin in the third column and span two columns */
     }
   
-    .method,
-    .contact,
-    .about-image,
-    .clients-image {
+    .method, .contact, .about-image, .clients-image {
       grid-column: 2 / span 2; /* Begin in the second column and span two columns */
     }
   }
